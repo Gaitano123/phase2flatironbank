@@ -1,4 +1,6 @@
 import React, {useEffect} from "react";
+import Navigation from "./Navigation";
+import Form from "./Form";
 
 function App (){
 
@@ -8,9 +10,12 @@ function App (){
     //     .then(data => console.log(data))
     // })
 
-    // return (
-    //     <h1>Hello</h1>
-    // )
+    return (
+        <>
+        <Navigation />
+        <Form />
+        </>
+    )
 }
 
 export default App;
