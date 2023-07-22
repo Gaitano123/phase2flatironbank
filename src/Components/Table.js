@@ -1,50 +1,44 @@
 import React, {useState} from "react";
-import Select from "./Select";
 import Search from "./Search";
 import Delete from "./Delete";
 
 function Table({transactions, onDeleteTransaction}){
-  const [selectCategory, setSelectCategory] = useState("All")
+  const [searchData, setSearchData] = useState("")
 
-  function handleFilterCategory(event){
-    setSelectCategory(event.target.value)
+  function handleSearchData(value){
+    setSearchData(value)
   }
 
-  const filteredTransactions = 
-   selectCategory === "All"
-   ? transactions
-   : transactions.filter((
-    (transaction) => transaction.category === selectCategory
-   ))
+
+   const filterTransactions = transactions.filter((transaction) => transaction.description.includes(searchData));
 
     return(
       <div>
-        <Select value={selectCategory} onChange={handleFilterCategory} />
-        <Search />
+        <Search search={ searchData } onSearch={handleSearchData}/>
         <table>
           <thead>
               <tr>
-                  <th>NO</th>
-                  <th>CATEGORY</th>
-                  <th>DESCRIPTION</th>
-                  <th>AMOUNT</th>
-                  <th>DATE</th>
-                  <th>REMOVE</th>
+                <th>NO</th>
+                <th>CATEGORY</th>
+                <th>DESCRIPTION</th>
+                <th>AMOUNT</th>
+                <th>DATE</th>
+                <th>REMOVE</th>
               </tr>
           </thead>
-          {Array.isArray(filteredTransactions) && filteredTransactions.length > 0 ? (
-              <tbody>
-                {filteredTransactions.map((transaction, index) => (
-                  <tr key={transaction.id}>
-                    <td>{index + 1}</td>
-                    <td>{transaction.category}</td>
-                    <td>{transaction.description}</td>
-                    <td>{transaction.amount}</td>
-                    <td>{transaction.date}</td>
-                    <td><Delete remove={onDeleteTransaction} transactionId={transaction.id}/></td>
-                  </tr>
-                ))}
-              </tbody>
+          {Array.isArray(filterTransactions) && filterTransactions.length > 0 ? (
+            <tbody>
+              {filterTransactions.map((transaction, index) => (
+                <tr key={transaction.id}>
+                  <td>{index + 1}</td>
+                  <td>{transaction.category}</td>
+                  <td>{transaction.description}</td>
+                  <td>{transaction.amount}</td>
+                  <td>{transaction.date}</td>
+                  <td><Delete remove={onDeleteTransaction} transactionId={transaction.id}/></td>
+                </tr>
+              ))}
+            </tbody>
           ) : (
             <tbody>
               <tr>
