@@ -1,14 +1,32 @@
-import React from "react";
-// import Delete from "./Delete";
+import React, {useState} from "react";
 
 function Table(props){
   const transactions = props.transactions;
+  const [selectCategory, setSelectCategory] = useState("All")
 
-  // function handleDelete(){
-  //   console.log(`handleDelete ${transactions.id}`)
-  // }
+  function handleFilterCategory(event){
+    setSelectCategory(event.target.value)
+  }
+
+  const filteredTransactions = 
+   selectCategory === "All"
+   ? transactions
+   : transactions.filter((
+    (transaction) => transaction.category === selectCategory
+   ))
 
     return(
+      <div>
+        <select value={selectCategory} onChange={handleFilterCategory}>
+          <option value="All">Filter By Category</option>
+          <option value="Income">Income</option>
+          <option value="Food">Food</option>
+          <option value="Fashion">Fashion</option>
+          <option value="Gift">Gift</option>
+          <option value="Transportation">Transportation</option>
+          <option value="Entertainment">Entertainment</option>
+          <option value="Housing">Housing</option>
+        </select>
         <table>
           <thead>
               <tr>
@@ -19,9 +37,9 @@ function Table(props){
                   <th>DATE</th>
               </tr>
           </thead>
-          {Array.isArray(transactions) && transactions.length > 0 ? (
+          {Array.isArray(filteredTransactions) && filteredTransactions.length > 0 ? (
               <tbody>
-                {transactions.map(transaction => (
+                {filteredTransactions.map(transaction => (
                   <tr key={transaction.id}>
                     <td>{transaction.id}</td>
                     <td>{transaction.category}</td>
@@ -41,6 +59,7 @@ function Table(props){
           )}
             
         </table>
+      </div>
     )
 }
 
