@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import Select from "./Select";
+import Search from "./Search";
 
 function Table({transactions, onDeleteTransaction}){
   const [selectCategory, setSelectCategory] = useState("All")
@@ -18,12 +19,7 @@ function Table({transactions, onDeleteTransaction}){
     return(
       <div>
         <Select value={selectCategory} onChange={handleFilterCategory} />
-        <form>
-          <label>Search
-            <input type="text"/>
-          </label>
-          <button type="submit">Search</button>
-        </form>
+        <Search />
         <table>
           <thead>
               <tr>
@@ -51,7 +47,7 @@ function Table({transactions, onDeleteTransaction}){
           ) : (
             <tbody>
               <tr>
-                <td colSpan="5">No transactions found.</td>
+                <td colSpan="5">Loading....</td>
               </tr>
             </tbody>
           )}
