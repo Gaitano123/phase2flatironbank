@@ -1,14 +1,9 @@
 import React from "react";
 
-function Delete(props){
-
-    function handleDelete(){
-        // const transactions = props
-        // console.log(`handleDelete ${transactions}`)
-    }
+function Delete({ remove, transactionId}){
 
     return(
-        <button onClick={handleDelete}>Delete</button>
+        <button onClick={()=> remove(transactionId)}>Delete</button>
     )
 }
 

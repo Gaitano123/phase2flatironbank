@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import Select from "./Select";
 import Search from "./Search";
+import Delete from "./Delete";
 
 function Table({transactions, onDeleteTransaction}){
   const [selectCategory, setSelectCategory] = useState("All")
@@ -40,7 +41,7 @@ function Table({transactions, onDeleteTransaction}){
                     <td>{transaction.description}</td>
                     <td>{transaction.amount}</td>
                     <td>{transaction.date}</td>
-                    <td><button onClick={() => onDeleteTransaction(transaction.id)}>Delete</button></td>
+                    <td><Delete remove={onDeleteTransaction} transactionId={transaction.id}/></td>
                   </tr>
                 ))}
               </tbody>
