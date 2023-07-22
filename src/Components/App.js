@@ -8,11 +8,6 @@ function App (){
     const [transactions, setTransactions] = useState([]);
 
     useEffect(() => {
-        // fetch('http://localhost:3000/transactions')
-        // .then(res => res.json())
-        // .then(data => {
-        //     setTransactions(data)
-        // })
         fetchData();
     }, [])
 
@@ -24,18 +19,31 @@ function App (){
         })
         .catch((error) => {
             console.error("Error:", error);
-          });
+        });
     }
 
-    // const addTransaction = (newTransaction) => {
-    //     setTransactions((prevTransactions) => [...prevTransactions, newTransaction]);
-    // };
+  const deleteTransaction = (id) => {
+    fetch(`http://localhost:3000/transactions/${id}`, {
+      method: "DELETE",
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        setTransactions((prevTransactions) =>
+          prevTransactions.filter((transaction) => transaction.id !== id)
+        );
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
 
     return (
         <>
         <Navigation />
-        <Form transactions={transactions} onFetchData={fetchData}/>
-        <Table transactions={transactions}/>
+        <Form transactions={transactions} onFetchData={fetchData} />
+        <Table transactions={transactions} onDeleteTransaction={deleteTransaction}/>
         </>
     )
     

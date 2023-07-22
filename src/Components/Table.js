@@ -1,7 +1,7 @@
 import React, {useState} from "react";
+import Select from "./Select";
 
-function Table(props){
-  const transactions = props.transactions;
+function Table({transactions, onDeleteTransaction}){
   const [selectCategory, setSelectCategory] = useState("All")
 
   function handleFilterCategory(event){
@@ -17,36 +17,34 @@ function Table(props){
 
     return(
       <div>
-        <select value={selectCategory} onChange={handleFilterCategory}>
-          <option value="All">Filter By Category</option>
-          <option value="Income">Income</option>
-          <option value="Food">Food</option>
-          <option value="Fashion">Fashion</option>
-          <option value="Gift">Gift</option>
-          <option value="Transportation">Transportation</option>
-          <option value="Entertainment">Entertainment</option>
-          <option value="Housing">Housing</option>
-        </select>
+        <Select value={selectCategory} onChange={handleFilterCategory} />
+        <form>
+          <label>Search
+            <input type="text"/>
+          </label>
+          <button type="submit">Search</button>
+        </form>
         <table>
           <thead>
               <tr>
-                  <th>ID</th>
+                  <th>NO</th>
                   <th>CATEGORY</th>
                   <th>DESCRIPTION</th>
                   <th>AMOUNT</th>
                   <th>DATE</th>
+                  <th>REMOVE</th>
               </tr>
           </thead>
           {Array.isArray(filteredTransactions) && filteredTransactions.length > 0 ? (
               <tbody>
-                {filteredTransactions.map(transaction => (
+                {filteredTransactions.map((transaction, index) => (
                   <tr key={transaction.id}>
-                    <td>{transaction.id}</td>
+                    <td>{index + 1}</td>
                     <td>{transaction.category}</td>
                     <td>{transaction.description}</td>
                     <td>{transaction.amount}</td>
                     <td>{transaction.date}</td>
-                    <td><button onClick={() => console.log("event click", transaction.id)}>Delete</button></td>
+                    <td><button onClick={() => onDeleteTransaction(transaction.id)}>Delete</button></td>
                   </tr>
                 ))}
               </tbody>
