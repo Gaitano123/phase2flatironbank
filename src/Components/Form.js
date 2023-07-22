@@ -1,15 +1,17 @@
 import React, {useState} from "react";
 
-function Form(){
+function Form({ onFetchData }){
 
-
-    const [formInputs, setFormInputs] = useState({
+    const initialInputs = {
         id: "",
-        category:"",
-        description:"",
-        amount:"",
-        date:"",
-    })
+        category: "",
+        description: "",
+        amount: "",
+        date: "",
+    }
+
+    const [formInputs, setFormInputs] = useState(initialInputs)
+    const [submissionStatus, setSubmissionStatus] = useState(null)
 
     function handleChange(event) {
         const key = event.target.id;
@@ -17,25 +19,33 @@ function Form(){
           ...prevFormInputs,
           [key]: event.target.value,
         }));
-      }
+    }
+
+    function resetForm(){
+        setFormInputs(initialInputs);
+    }
 
     function handleSubmit(event) {
         event.preventDefault();
-        // fetch('http://localhost:3000/transactions', {
-        //     method: 'POST',
-        //     headers:{
-        //         "content-type": "application/json",
-        //     },
-        //     body: JSON.stringify(formInputs)
-        // })
-        // .then((response) => {
-        //     if (!response.ok) {
-        //       throw new Error('Network response was not ok');
-        //     }
-        // })
-        // .catch((error) => {
-        //   console.error('Error:', error);
-        // });
+        fetch('http://localhost:3000/transactions', {
+            method: 'POST',
+            headers:{
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(formInputs)
+        })
+        .then((response) => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            setSubmissionStatus("Success")
+            resetForm()
+            onFetchData()
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+          setSubmissionStatus("Error")
+        });
     }
 
     return(
@@ -56,6 +66,8 @@ function Form(){
                 <input id="date" type="date" value={formInputs.date} onChange={handleChange}/>
             </label>
             <button type="submit">Submit</button>
+            {submissionStatus === "success" && <p>Form submitted successfully!</p>}
+            {submissionStatus === "error" && <p>Error occurred. Please try again later.</p>}
         </form>
     )
 }

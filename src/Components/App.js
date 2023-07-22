@@ -8,20 +8,37 @@ function App (){
     const [transactions, setTransactions] = useState([]);
 
     useEffect(() => {
+        // fetch('http://localhost:3000/transactions')
+        // .then(res => res.json())
+        // .then(data => {
+        //     setTransactions(data)
+        // })
+        fetchData();
+    }, [])
+
+    function fetchData() {
         fetch('http://localhost:3000/transactions')
         .then(res => res.json())
         .then(data => {
             setTransactions(data)
         })
-    }, [])
+        .catch((error) => {
+            console.error("Error:", error);
+          });
+    }
+
+    // const addTransaction = (newTransaction) => {
+    //     setTransactions((prevTransactions) => [...prevTransactions, newTransaction]);
+    // };
 
     return (
         <>
         <Navigation />
-        <Form transactions={transactions}/>
+        <Form transactions={transactions} onFetchData={fetchData}/>
         <Table transactions={transactions}/>
         </>
     )
+    
 }
 
 export default App;
