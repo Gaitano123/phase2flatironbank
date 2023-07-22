@@ -2,6 +2,7 @@ import React, {useState} from "react";
 
 function Form(){
 
+
     const [formInputs, setFormInputs] = useState({
         id: "",
         category:"",
@@ -20,7 +21,21 @@ function Form(){
 
     function handleSubmit(event) {
         event.preventDefault();
-        console.log("Form submitted:", formInputs);
+        // fetch('http://localhost:3000/transactions', {
+        //     method: 'POST',
+        //     headers:{
+        //         "content-type": "application/json",
+        //     },
+        //     body: JSON.stringify(formInputs)
+        // })
+        // .then((response) => {
+        //     if (!response.ok) {
+        //       throw new Error('Network response was not ok');
+        //     }
+        // })
+        // .catch((error) => {
+        //   console.error('Error:', error);
+        // });
     }
 
     return(

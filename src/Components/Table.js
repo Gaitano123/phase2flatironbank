@@ -1,7 +1,13 @@
 import React from "react";
+// import Delete from "./Delete";
 
 function Table(props){
   const transactions = props.transactions;
+
+  // function handleDelete(){
+  //   console.log(`handleDelete ${transactions.id}`)
+  // }
+
     return(
         <table>
           <thead>
@@ -22,6 +28,7 @@ function Table(props){
                     <td>{transaction.description}</td>
                     <td>{transaction.amount}</td>
                     <td>{transaction.date}</td>
+                    <td><button onClick={() => console.log("event click", transaction.id)}>Delete</button></td>
                   </tr>
                 ))}
               </tbody>

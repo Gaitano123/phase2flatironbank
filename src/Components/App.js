@@ -18,7 +18,7 @@ function App (){
     return (
         <>
         <Navigation />
-        <Form />
+        <Form transactions={transactions}/>
         <Table transactions={transactions}/>
         </>
     )
