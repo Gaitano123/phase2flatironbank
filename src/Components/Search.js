@@ -7,12 +7,14 @@ function Search ({ search, onSearch}) {
   }
 
     return(
-     <form>
-        <label>Search
+      <div className="position">
+      <form>
+        <label>SEARCH DESCRIPTION
           <input type="text" value={ search } onChange={(event) => onSearch(event.target.value)}/>
         </label>
-        <button type="submit" onClick={handleSubmit}>Search</button>
+        <button type="submit" onClick={handleSubmit} class="btn btn-primary btn_margin" >Search</button>
       </form>
+      </div>
     )
 }
 

@@ -49,26 +49,41 @@ function Form({ onFetchData }){
     }
 
     return(
+        <>
+        <h3 className="titles">TRANSACTION FORM</h3>
         <form onSubmit={handleSubmit}>
-            <label htmlFor="id">Id
-                <input id="id" type="number" value={formInputs.id} onChange={handleChange} />
-            </label>
-            <label htmlFor="category">Category
-                <input id="category" type="text" value={formInputs.category} onChange={handleChange}/>
-            </label>
-            <label htmlFor="description">Description
-                <input id="description" type="text" value={formInputs.description} onChange={handleChange}/>
-            </label>
-            <label htmlFor="amount">Amount
-                <input id="amount" type="number" value={formInputs.amount} onChange={handleChange}/>
-            </label>
+            <div class="form-row">
+                <div class="col">
+                    <label htmlFor="id">Id
+                        <input id="id" type="number" value={formInputs.id} onChange={handleChange} />
+                    </label>
+                </div>
+                <div class="col">
+                    <label htmlFor="category">Category
+                        <input id="category" type="text" value={formInputs.category} onChange={handleChange}/>
+                    </label>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <label htmlFor="description">Description
+                        <input id="description" type="text" value={formInputs.description} onChange={handleChange}/>
+                    </label>
+                </div>
+                <div className="col">
+                    <label htmlFor="amount">Amount
+                        <input id="amount" type="number" value={formInputs.amount} onChange={handleChange}/>
+                    </label>
+                </div>
+            </div>
             <label htmlFor="date">Date
                 <input id="date" type="date" value={formInputs.date} onChange={handleChange}/>
             </label>
-            <button type="submit">Submit</button>
+            <button type="submit" className="btn btn-primary submit">Submit</button>
             {submissionStatus === "success" && <p>Form submitted successfully!</p>}
             {submissionStatus === "error" && <p>Error occurred. Please try again later.</p>}
         </form>
+        </>
     )
 }
 
