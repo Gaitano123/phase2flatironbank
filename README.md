@@ -1,71 +1,79 @@
-# Getting Started with Create React App
+# FLATIRON BANK
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### Created by `Gaitano George` on 23-07-2023
 
-## Available Scripts
+## Design Link
 
-In the project directory, you can run:
+[Flatiron-Bank](https://gaitano123.github.io/phase2flatironbank/)
 
-### `npm start`
+## Description
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Flatiron bank is a website that provides a way to view the transactions made by the Bank, it has a form which allows the user to enter new transactions that they want, a serach bar is also there for the user to search for a transaction by its description.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+All the transactions all displayed on a table which has a delete button for deleting a transaction.
 
-### `npm test`
+## Setup Requirements
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Web-browser of your choice
+- GitHub
 
-### `npm run build`
+## Technologies Used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- HTML
+- CSS
+- JavaScript
+- React
+- Bootstrap
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Live link to view the project <a href="https://gaitano123.github.io/phase2flatironbank/">FlatironBank</a
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## `Screenshots of the project`
 
-### `npm run eject`
+- Landing page
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+  <img src="Screenshots/Screenshot from 2023-07-23 17-10-17.png">
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Transaction Form
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+  <img src="Screenshots/Screenshot from 2023-07-23 17-08-27.png">
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Search Bar
 
-## Learn More
+  <img src="Screenshots/Screenshot from 2023-07-23 17-08-54.png">
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Transaction Table
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  <img src="Screenshots/Screenshot from 2023-07-23 17-07-48.png">
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Known Bugs
 
-### Analyzing the Bundle Size
+So far so good there are no bugs related to this project 😎
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Support and contact details 🙂
 
-### Making a Progressive Web App
+To make a contribution to the code used or any suggestions you can click on the contact link and email me your suggestions.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Email: gaitano.george@Student.moringaschool.com
 
-### Advanced Configuration
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Copyright (c) 2023 `Asiyah Gaitano George`
 
-### Deployment
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files , to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# phase2flatironbank
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
