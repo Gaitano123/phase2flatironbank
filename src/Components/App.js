@@ -12,7 +12,7 @@ function App (){
     }, [])
 
     function fetchData() {
-        fetch('http://localhost:3000/transactions')
+        fetch('https://flatironbank-6myj.onrender.com/transactions')
         .then(res => res.json())
         .then(data => {
             setTransactions(data)
@@ -23,7 +23,7 @@ function App (){
     }
 
   const deleteTransaction = (id) => {
-    fetch(`http://localhost:3000/transactions/${id}`, {
+    fetch(`https://flatironbank-6myj.onrender.com/transactions/${id}`, {
       method: "DELETE",
     })
       .then((response) => {
