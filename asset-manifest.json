@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/phase2flatironbank/static/css/main.34da37a1.css",
+    "main.js": "/phase2flatironbank/static/js/main.3203679e.js",
+    "index.html": "/phase2flatironbank/index.html",
+    "main.34da37a1.css.map": "/phase2flatironbank/static/css/main.34da37a1.css.map",
+    "main.3203679e.js.map": "/phase2flatironbank/static/js/main.3203679e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.34da37a1.css",
+    "static/js/main.3203679e.js"
+  ]
+}
