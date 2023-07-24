@@ -12,7 +12,7 @@ function Search ({ search, onSearch}) {
         <label>SEARCH DESCRIPTION
           <input type="text" value={ search } onChange={(event) => onSearch(event.target.value)}/>
         </label>
-        <button type="submit" onClick={handleSubmit} class="btn btn-primary btn_margin" >Search</button>
+        <button type="submit" onClick={handleSubmit} className="btn btn-primary btn_margin" >Search</button>
       </form>
       </div>
     )

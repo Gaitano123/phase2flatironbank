@@ -104,6 +104,13 @@
       "description": "Cake from Auntie",
       "amount": "400",
       "date": "2023-06-27"
+    },
+    {
+      "id": "15",
+      "category": "Fashion",
+      "description": "Shirt, Vest",
+      "amount": "4655",
+      "date": "2023-07-05"
     }
   ]
 }

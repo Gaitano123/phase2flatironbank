@@ -16,8 +16,8 @@ function Table({transactions, onDeleteTransaction}){
       <div>
         <Search search={ searchData } onSearch={handleSearchData}/>
         <h2 className="titles">TRANSACTION TABLE</h2>
-        <table class="table table-striped table-hover">
-          <thead class="table-dark">
+        <table className="table table-striped table-hover">
+          <thead className="table-dark">
               <tr>
                 <th>NO</th>
                 <th>CATEGORY</th>

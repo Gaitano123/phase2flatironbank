@@ -27,7 +27,7 @@ function Form({ onFetchData }){
 
     function handleSubmit(event) {
         event.preventDefault();
-        fetch('http://localhost:3000/transactions', {
+        fetch('https://flatironbank-6myj.onrender.com/transactions', {
             method: 'POST',
             headers:{
                 "content-type": "application/json",
@@ -52,20 +52,20 @@ function Form({ onFetchData }){
         <>
         <h3 className="titles">TRANSACTION FORM</h3>
         <form onSubmit={handleSubmit}>
-            <div class="form-row">
-                <div class="col">
+            <div className="form-row">
+                <div className="col">
                     <label htmlFor="id">Id
                         <input id="id" type="number" value={formInputs.id} onChange={handleChange} />
                     </label>
                 </div>
-                <div class="col">
+                <div className="col">
                     <label htmlFor="category">Category
                         <input id="category" type="text" value={formInputs.category} onChange={handleChange}/>
                     </label>
                 </div>
             </div>
-            <div class="form-row">
-                <div class="col">
+            <div className="form-row">
+                <div className="col">
                     <label htmlFor="description">Description
                         <input id="description" type="text" value={formInputs.description} onChange={handleChange}/>
                     </label>
