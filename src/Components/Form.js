@@ -3,7 +3,6 @@ import React, {useState} from "react";
 function Form({ onFetchData }){
 
     const initialInputs = {
-        id: "",
         category: "",
         description: "",
         amount: "",
@@ -53,11 +52,6 @@ function Form({ onFetchData }){
         <h3 className="titles">TRANSACTION FORM</h3>
         <form onSubmit={handleSubmit}>
             <div className="form-row">
-                <div className="col">
-                    <label htmlFor="id">Id
-                        <input id="id" type="number" value={formInputs.id} onChange={handleChange} />
-                    </label>
-                </div>
                 <div className="col">
                     <label htmlFor="category">Category
                         <input id="category" type="text" value={formInputs.category} onChange={handleChange}/>
